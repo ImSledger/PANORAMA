@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PANORAMA kết nối câu lạc bộ với các designer sáng tạo." />
+  <title>PANORAMA — Tìm designer cho câu lạc bộ của bạn</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#" aria-label="PANORAMA trang chủ">PANORAMA<span>.</span></a>
+    <nav class="desktop-nav" aria-label="Điều hướng chính">
+      <a href="#explore">Khám phá designer</a>
+      <a href="#how-it-works">Cách hoạt động</a>
+      <a href="#for-designers">Dành cho designer</a>
+    </nav>
+    <button class="button button-dark header-cta" id="joinBtn">Tham gia mạng lưới ↗</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Mở menu" aria-expanded="false">☰</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> MẠNG LƯỚI SÁNG TẠO DÀNH CHO CÂU LẠC BỘ</p>
+        <h1>Just say yes,<br /><span>We "des" it for you!</span></h1>
+        <p class="hero-description">Tìm designer phù hợp cho poster sự kiện, bộ nhận diện câu lạc bộ và những dự án sáng tạo tiếp theo của bạn.</p>
+        <div class="hero-actions">
+          <a class="button button-dark" href="#explore">Khám phá designer <span>↗</span></a>
+          <a class="button button-light" href="#how-it-works">Cách hoạt động</a>
+        </div>
+        <div class="hero-proof">
+          <div class="avatar-stack" aria-hidden="true"><span>MA</span><span>LN</span><span>TH</span><span>+</span></div>
+          <p><strong>Không gian sáng tạo chung</strong><br />Cho câu lạc bộ và người thiết kế</p>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Các mẫu thiết kế minh họa">
+        <div class="art-note">Ý TƯỞNG<br />THÀNH HÌNH ✳</div>
+        <article class="poster poster-orange">
+          <span class="poster-small">CLUB NIGHT / 2026</span>
+          <strong>MAKE<br />SOME<br /><i>NOISE.</i></strong>
+          <span class="poster-bottom">ÂM NHẠC · CỘNG ĐỒNG · SÁNG TẠO</span>
+        </article>
+        <article class="poster poster-lilac">
+          <span class="poster-small">CREATIVE SOCIETY PRESENTS</span>
+          <strong>OUT<br />OF THE<br /><i>BOX</i></strong>
+          <span class="poster-sticker">VOL. 04</span>
+        </article>
+        <div class="hero-caption">DESIGN THAT BRINGS PEOPLE TOGETHER</div>
+      </div>
+    </section>
+
+    <section class="category-strip" aria-label="Danh mục thiết kế">
+      <span>KHÁM PHÁ THEO NHU CẦU</span>
+      <button class="category-chip active" data-category="Tất cả">Tất cả</button>
+      <button class="category-chip" data-category="Poster sự kiện">Poster sự kiện</button>
+      <button class="category-chip" data-category="Nhận diện CLB">Nhận diện CLB</button>
+      <button class="category-chip" data-category="Social media">Social media</button>
+      <button class="category-chip" data-category="Minh họa">Minh họa</button>
+    </section>
+
+    <section class="explore-section section-wrap" id="explore">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">TÌM NGƯỜI ĐỒNG HÀNH</p>
+          <h2>Gặp gỡ những <span>nhà sáng tạo.</span></h2>
+          <p class="section-description">Khám phá phong cách, xem sản phẩm mẫu và tìm người phù hợp với dự án của câu lạc bộ.</p>
+        </div>
+        <div class="result-count" id="resultCount">4 designer</div>
+      </div>
+      <div class="filter-row">
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Tìm tên, phong cách, dịch vụ..." /></label>
+        <label class="sort-label">Sắp xếp
+          <select id="sortSelect">
+            <option value="featured">Nổi bật</option>
+            <option value="price-asc">Giá thấp đến cao</option>
+            <option value="price-desc">Giá cao đến thấp</option>
+          </select>
+        </label>
+      </div>
+      <div class="designer-grid" id="designerGrid"></div>
+      <div class="empty-state hidden" id="emptyState">
+        <div class="empty-icon">⌕</div>
+        <h3>Chưa tìm thấy designer phù hợp</h3>
+        <p>Thử một từ khóa khác hoặc chọn danh mục “Tất cả”.</p>
+        <button class="button button-light" id="resetFilters">Xóa bộ lọc</button>
+      </div>
+    </section>
+
+    <section class="how-section" id="how-it-works">
+      <div class="section-wrap">
+        <p class="eyebrow">ĐƠN GIẢN TỪ Ý TƯỞNG ĐẾN SẢN PHẨM</p>
+        <h2>Ba bước để bắt đầu.</h2>
+        <div class="steps-grid">
+          <article class="step-card"><span class="step-number">01</span><div class="step-icon">⌕</div><h3>Tìm phong cách phù hợp</h3><p>Duyệt PANORAMA, dịch vụ và mức giá để chọn designer phù hợp với tinh thần câu lạc bộ.</p></article>
+          <article class="step-card"><span class="step-number">02</span><div class="step-icon">✳</div><h3>Trao đổi yêu cầu</h3><p>Chia sẻ ý tưởng, nội dung, thời hạn và những điều bạn cần cho dự án.</p></article>
+          <article class="step-card"><span class="step-number">03</span><div class="step-icon">↗</div><h3>Cùng tạo nên sản phẩm</h3><p>Thống nhất phạm vi công việc, chi phí và điều khoản trước khi bắt đầu.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="designer-banner section-wrap" id="for-designers">
+      <div>
+        <p class="eyebrow">BẠN LÀ DESIGNER?</p>
+        <h2>Đưa tác phẩm của bạn<br />đến gần cộng đồng hơn.</h2>
+        <p>Giới thiệu PANORAMA, dịch vụ và phong cách của bạn đến những câu lạc bộ đang tìm kiếm ý tưởng mới.</p>
+      </div>
+      <button class="button button-cream" id="designerJoinBtn">Đăng ký ↗</button>
+      <div class="banner-star" aria-hidden="true"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="logo" href="#">PANORAMA<span>.</span></a>
+    <p>Một không gian kết nối ý tưởng và người tạo nên chúng.</p>
+    <span>© 2026 PANORAMA · Bản demo</span>
+  </footer>
+
+  <dialog class="modal" id="designerModal">
+    <button class="modal-close" id="closeModal" aria-label="Đóng">×</button>
+    <div id="modalContent"></div>
+  </dialog>
+
+  <dialog class="modal request-modal" id="requestModal">
+    <button class="modal-close" id="closeRequestModal" aria-label="Đóng">×</button>
+    <p class="eyebrow">BẮT ĐẦU MỘT DỰ ÁN</p>
+    <h2 id="requestTitle">Gửi yêu cầu thiết kế</h2>
+    <p class="modal-intro">Điền thông tin bên dưới. Bản demo sẽ hiển thị xác nhận trên trang, chưa gửi dữ liệu lên máy chủ.</p>
+    <form id="requestForm">
+      <label>Tên bạn hoặc câu lạc bộ<input name="club" required placeholder="VD: CLB Truyền thông ABC" /></label>
+      <label>Email liên hệ<input name="email" type="email" required placeholder="ten@email.com" /></label>
+      <label>Bạn cần thiết kế gì?
+        <select name="service" required>
+          <option value="">Chọn dịch vụ</option>
+          <option>Poster sự kiện</option><option>Nhận diện CLB</option><option>Social media</option><option>Minh họa</option><option>Khác</option>
+        </select>
+      </label>
+      <label>Mô tả ngắn về dự án<textarea name="details" rows="4" required placeholder="Ý tưởng, thời hạn, số lượng sản phẩm..."></textarea></label>
+      <button class="button button-dark form-submit" type="submit">Xem xác nhận yêu cầu ↗</button>
+      <p class="form-notice" id="formNotice" role="status"></p>
+    </form>
+  </dialog>
+
+  <dialog class="modal" id="infoModal">
+    <button class="modal-close" id="closeInfoModal" aria-label="Đóng">×</button>
+    <p class="eyebrow">PANORAMA</p>
+    <h2 id="infoTitle">Tham gia PANORAMA</h2>
+    <p id="infoText" class="modal-intro"></p>
+    <button class="button button-dark" id="infoDone">Đã hiểu</button>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
