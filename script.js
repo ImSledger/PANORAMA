@@ -5,7 +5,7 @@ const designers = [
     categories: ["Poster sự kiện", "Social media"], price: 250000, featured: 1,
     palette: ["#f07853", "#272922"], background: "#f8d6c8", status: "Đang nhận dự án",
     samples: [
-      { title: "MAKE SOME NOISE", type: "POSTER SỰ KIỆN", bg: "#ef7954", fg: "#292a24" },
+      { title: "MAKE SOME NOISE", type: "POSTER SỰ KIỆN", bg: "#ef7954", fg: "#292a24" , image: "poster-1.jpg" },
       { title: "STAY CURIOUS", type: "SOCIAL CAMPAIGN", bg: "#d7c7f2", fg: "#353044" },
       { title: "CLUB NIGHT", type: "MUSIC EVENT", bg: "#292a24", fg: "#f1c7b4" }
     ],
@@ -87,22 +87,28 @@ function renderCard(designer) {
   const tags = designer.categories.map(cat => `<span class="tag">${cat}</span>`).join("");
   return `
     <article class="designer-card" tabindex="0" role="button" aria-label="Xem hồ sơ ${designer.name}" data-id="${designer.id}">
-      <div class="card-art" style="background:${designer.background}">
-        <div class="mini-poster" style="background:${sample.bg};color:${sample.fg}">
-          <span>${sample.type}</span><strong>${sample.title.replaceAll(" ", "<br>")}</strong><span>PANORAMA / CREATIVE WORK</span>
-        </div>
-        <span class="art-label">${designer.categories[0]}</span>
-      </div>
-      <div class="card-body">
-        <div class="card-topline"><h3>${designer.name}</h3><span class="availability">${designer.status}</span></div>
-        <p class="card-bio">${designer.bio}</p>
-        <div class="tag-list">${tags}</div>
-        <div class="card-bottom">
-          <div><span class="price-label">Giá từ</span><span class="card-price">${formatPrice(designer.price)}</span></div>
-          <button class="card-open" aria-label="Xem chi tiết ${designer.name}" data-open-id="${designer.id}">↗</button>
-        </div>
-      </div>
-    </article>`;
+  <div class="card-art" style="background:${designer.background}">
+    ${
+      sample.image
+        ? `<img class="sample-image" src="${sample.image}" alt="${sample.title}" loading="lazy">`
+        : `<div class="mini-poster" style="background:${sample.bg};color:${sample.fg}">
+            <span>${sample.type}</span>
+            <strong>${sample.title.replaceAll(" ", "<br>")}</strong>
+            <span>PANORAMA / CREATIVE WORK</span>
+          </div>`
+    }
+    <span class="art-label">${designer.categories[0]}</span>
+  </div>
+  <div class="card-body">
+    <div class="card-topline"><h3>${designer.name}</h3><span class="availability">${designer.status}</span></div>
+    <p class="card-bio">${designer.bio}</p>
+    <div class="tag-list">${tags}</div>
+    <div class="card-bottom">
+      <div><span class="price-label">Giá từ</span><span class="card-price">${formatPrice(designer.price)}</span></div>
+      <button class="card-open" aria-label="Xem chi tiết ${designer.name}" data-open-id="${designer.id}">↗</button>
+    </div>
+  </div>
+</article>`;
 }
 
 function renderDesigners() {
